@@ -18,6 +18,7 @@ public:
     ~Clock();
 
     int timer_delay=200;
+    QString font_size="50";
     QTimer *timer;
 
 public slots:

@@ -12,6 +12,15 @@ Clock::Clock(QWidget *parent) :
     timer = new QTimer();
     connect(timer,SIGNAL(timeout()),this,SLOT(Timer_SLOT()));
     timer->start(timer_delay);
+    this->setContextMenuPolicy(Qt::CustomContextMenu);
+
+    ui->label->setStyleSheet("font-size: "+font_size+"px;");
+    ui->frame->setFrameStyle(QFrame::Sunken);//Plain - плоская, Raised - поднятая, Sunken - утопленная
+
+    //ui->frame->setFrameShape(QFrame::WinPanel); //QFrame::Shape Box, Panel, StyledPanel, HLine, VLine, WinPanel
+    ui->frame->setFrameShape(QFrame::Box); //QFrame::Shape Box, Panel, StyledPanel, HLine, VLine, WinPanel
+    ui->frame->setLineWidth(5);
+
 }
 
 Clock::~Clock()
